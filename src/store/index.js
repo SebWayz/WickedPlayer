@@ -1,7 +1,7 @@
 import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
 
-import musiques from './store-waveform'
+import musiques from './musiques'
 
 // import example from './module-example'
 

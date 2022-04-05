@@ -12,6 +12,7 @@ try {
 } catch (_) { }
 
 let mainWindow
+const ipc = require('electron').ipcMain
 
 function createWindow () {
   /**
@@ -58,4 +59,8 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+ipc.on('update-notify-value', function (event, arg) {
+  mainWindow.webContents.send('targetPriceVal', arg)
 })
